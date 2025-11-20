@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="16dp"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView android:id="@+id/tvWelcome" android:text="Welcome" android:textSize="20sp" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button android:id="@+id/btnDirectory" android:layout_marginTop="16dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="View Directory" />
+    <Button android:id="@+id/btnMapSearch" android:layout_marginTop="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Find Nearby Offices" />
+    <Button android:id="@+id/btnEmail" android:layout_marginTop="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Send Email" />
+</LinearLayout>

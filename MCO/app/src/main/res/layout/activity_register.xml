@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="24dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView android:text="QC Assist — Register" android:textSize="22sp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+        <com.google.android.material.textfield.TextInputLayout android:hint="Full name" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputEditText android:id="@+id/etName" android:layout_width="match_parent" android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout android:hint="Email" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp">
+            <com.google.android.material.textfield.TextInputEditText android:id="@+id/etRegEmail" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textEmailAddress"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout android:hint="Password" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp">
+            <com.google.android.material.textfield.TextInputEditText android:id="@+id/etRegPassword" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textPassword"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button android:id="@+id/btnRegister" android:layout_marginTop="16dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Register"/>
+    </LinearLayout>
+</ScrollView>
