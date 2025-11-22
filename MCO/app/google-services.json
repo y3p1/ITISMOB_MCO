@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "899264401762",
+    "project_id": "mob-mco3",
+    "storage_bucket": "mob-mco3.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:899264401762:android:f371878a8afe4edc7f5c3b",
+        "android_client_info": {
+          "package_name": "com.mobdeve.s16.druzali.shawn.mco2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcblYc1vDZwvM72sQzm6L-8lhdckhoyf4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

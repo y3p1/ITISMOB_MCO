@@ -10,4 +10,12 @@
     <Button android:id="@+id/btnDirectory" android:layout_marginTop="16dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="View Directory" />
     <Button android:id="@+id/btnMapSearch" android:layout_marginTop="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Find Nearby Offices" />
     <Button android:id="@+id/btnEmail" android:layout_marginTop="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Send Email" />
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        android:backgroundTint="@android:color/holo_red_dark" />
+
 </LinearLayout>
