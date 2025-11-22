@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:padding="8dp"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView android:text="Find Nearby Offices" android:textSize="18sp" android:layout_marginBottom="8dp" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <!-- For Phase 2 prototype: we show a placeholder view that represents a map -->
+    <FrameLayout android:id="@+id/mapPlaceholder" android:layout_width="match_parent" android:layout_height="220dp" android:background="@android:color/darker_gray">
+        <TextView android:layout_gravity="center" android:text="Map placeholder (Phase 2). Real map in Phase 3." android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </FrameLayout>
+
+    <Button android:id="@+id/btnLocate" android:layout_marginTop="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Use my location (simulate)"/>
+    <androidx.recyclerview.widget.RecyclerView android:id="@+id/rvNearby" android:layout_marginTop="12dp" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"/>
+</LinearLayout>
