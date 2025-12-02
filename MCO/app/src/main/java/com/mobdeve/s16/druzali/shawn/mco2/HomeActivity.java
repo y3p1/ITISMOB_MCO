@@ -10,7 +10,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class HomeActivity extends AppCompatActivity {
     TextView tvWelcome;
-    Button btnDirectory, btnMapSearch, btnEmail, btnLogout;
+    Button btnDirectory, btnMapSearch, btnEmail, btnFeedback, btnLogout;
     FirebaseAuth mAuth;
 
     @Override
@@ -23,6 +23,7 @@ public class HomeActivity extends AppCompatActivity {
         btnDirectory = findViewById(R.id.btnDirectory);
         btnMapSearch = findViewById(R.id.btnMapSearch);
         btnEmail = findViewById(R.id.btnEmail);
+        btnFeedback = findViewById(R.id.btnFeedback);
         btnLogout = findViewById(R.id.btnLogout);
 
 
@@ -35,6 +36,7 @@ public class HomeActivity extends AppCompatActivity {
         btnDirectory.setOnClickListener(v -> startActivity(new Intent(this, DirectoryActivity.class)));
         btnMapSearch.setOnClickListener(v -> startActivity(new Intent(this, MapSearchActivity.class)));
         btnEmail.setOnClickListener(v -> startActivity(new Intent(this, EmailActivity.class)));
+        btnFeedback.setOnClickListener(v -> startActivity(new Intent(this, SubmitFeedbackActivity.class)));
         btnLogout.setOnClickListener(v -> logout());
     }
 
