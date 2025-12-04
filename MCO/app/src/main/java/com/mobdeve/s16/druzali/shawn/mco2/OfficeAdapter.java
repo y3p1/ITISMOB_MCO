@@ -4,33 +4,58 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.List;
 
-public class OfficeAdapter extends RecyclerView.Adapter<OfficeAdapter.VH> {
-    List<Office> items;
-    OnItemClickListener listener;
+public class OfficeAdapter extends RecyclerView.Adapter<OfficeAdapter.OfficeViewHolder> {
 
-    public interface OnItemClickListener { void onClick(Office office); }
+    private List<Office> officeList;
+    private OnOfficeClickListener listener;
 
-    static class VH extends RecyclerView.ViewHolder {
-        TextView tvName, tvAddr;
-        VH(View v) { super(v); tvName = v.findViewById(R.id.tvOfficeName); tvAddr = v.findViewById(R.id.tvOfficeAddress); }
+    public interface OnOfficeClickListener {
+        void onOfficeClick(Office office);
     }
 
-    public OfficeAdapter(List<Office> items, OnItemClickListener listener) {
-        this.items = items; this.listener = listener;
+    public OfficeAdapter(List<Office> officeList, OnOfficeClickListener listener) {
+        this.officeList = officeList;
+        this.listener = listener;
     }
 
-    @Override public VH onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_office, parent, false);
-        return new VH(v);
+    @NonNull
+    @Override
+    public OfficeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.item_office, parent, false);
+        return new OfficeViewHolder(v);
     }
-    @Override public void onBindViewHolder(VH holder, int position) {
-        Office o = items.get(position);
-        holder.tvName.setText(o.name);
-        holder.tvAddr.setText(o.address);
-        holder.itemView.setOnClickListener(v -> listener.onClick(o));
+
+    @Override
+    public void onBindViewHolder(@NonNull OfficeViewHolder holder, int position) {
+        Office o = officeList.get(position);
+        holder.tvOfficeName.setText(o.getName());
+        holder.tvOfficeAddress.setText(o.getAddress());
+
+        holder.itemView.setOnClickListener(v -> {
+            if (listener != null) {
+                listener.onOfficeClick(o);
+            }
+        });
     }
-    @Override public int getItemCount() { return items.size(); }
+
+    @Override
+    public int getItemCount() {
+        return officeList.size();
+    }
+
+    static class OfficeViewHolder extends RecyclerView.ViewHolder {
+        TextView tvOfficeName, tvOfficeAddress;
+
+        OfficeViewHolder(@NonNull View itemView) {
+            super(itemView);
+            tvOfficeName = itemView.findViewById(R.id.tvOfficeName);
+            tvOfficeAddress = itemView.findViewById(R.id.tvOfficeAddress);
+        }
+    }
 }

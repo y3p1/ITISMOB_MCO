@@ -9,16 +9,20 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.textfield.TextInputEditText;
 import android.widget.Toast;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
     TextInputEditText etEmail, etPassword;
     Button btnLogin;
     TextView tvRegisterLink;
+    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        mAuth = FirebaseAuth.getInstance();
 
         etEmail = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
@@ -43,16 +47,23 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
-        // === Phase 2: simulate successful login ===
-        // Accept any input that passes validation for the interactive prototype
-        Toast.makeText(this, "Login successful (prototype)", Toast.LENGTH_SHORT).show();
+        mAuth.signInWithEmailAndPassword(email, pass)
+                .addOnCompleteListener(this, task -> {
+                    if (task.isSuccessful()) {
+                        FirebaseUser user = mAuth.getCurrentUser();
+                        Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show();
+                        navigateToHome(user != null ? user.getEmail() : email);
+                    } else {
+                        Toast.makeText(this, "Authentication failed: " +
+                                task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                    }
+                });
+    }
+
+    private void navigateToHome(String email) {
         Intent i = new Intent(this, HomeActivity.class);
         i.putExtra("userEmail", email);
         startActivity(i);
         finish();
-
-        // === Phase 3: replace with FirebaseAuth signInWithEmailAndPassword ===
-        // Example:
-        // FirebaseAuth.getInstance().signInWithEmailAndPassword(email, pass).addOnCompleteListener(...)
     }
 }

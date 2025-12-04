@@ -1,13 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:padding="16dp"
-    android:orientation="vertical"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fillViewport="true">
 
-    <TextView android:id="@+id/tvWelcome" android:text="Welcome" android:textSize="20sp" android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <Button android:id="@+id/btnDirectory" android:layout_marginTop="16dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="View Directory" />
-    <Button android:id="@+id/btnMapSearch" android:layout_marginTop="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Find Nearby Offices" />
-    <Button android:id="@+id/btnEmail" android:layout_marginTop="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Send Email" />
-</LinearLayout>
+    <LinearLayout
+        android:padding="16dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Welcome Message -->
+        <TextView
+            android:id="@+id/tvWelcome"
+            android:text="Welcome"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:text="Access government services and information"
+            android:textSize="14sp"
+            android:textColor="@android:color/darker_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Directory Section -->
+        <TextView
+            android:text="Directory"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btnDirectory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📋 View Directory"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btnMapSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📍 Find Nearby Offices"
+            android:textSize="16sp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Services Section -->
+        <TextView
+            android:text="Services"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btnTemplates"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📄 Guarantee Letter Templates"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btnEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="✉️ Send Email"
+            android:textSize="16sp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Support Section -->
+        <TextView
+            android:text="Support"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btnFeedback"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="💬 Submit Feedback"
+            android:textSize="16sp"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Logout Button -->
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Logout"
+            android:textSize="16sp"
+            android:backgroundTint="@android:color/holo_red_dark" />
+
+    </LinearLayout>
+
+</ScrollView>
